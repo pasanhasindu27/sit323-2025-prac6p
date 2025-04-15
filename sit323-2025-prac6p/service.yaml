@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: advanced-calculator-service
+spec:
+  type: NodePort # Makes the service accessible externally on a port
+  selector:
+    app: calculator
+  ports:
+    - protocol: TCP
+      port: 4000        # Port to expose the service
+      targetPort: 4000  # Port on the container
+      nodePort: 30036   # External port 
